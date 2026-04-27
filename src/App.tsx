@@ -180,7 +180,7 @@ export default function App() {
                 </div>
                 <div className="aspect-[9/16] bg-stone-200 flex items-center justify-center rounded-3xl border-4 border-white shadow-xl overflow-hidden relative">
                    <img 
-                    src="https://images.unsplash.com/photo-1518173946687-a4c8a3b7782a?auto=format&fit=crop&q=80&w=500" 
+                    src="/img/dasboard.png" 
                     alt="Eco App" 
                     className="w-full h-full object-cover grayscale opacity-50"
                     referrerPolicy="no-referrer"
