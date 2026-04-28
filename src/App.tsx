@@ -44,9 +44,17 @@ export default function App() {
               EcoTrack is a gamified habit-tracking ecosystem designed to bridge the gap 
               between environmental awareness and actionable daily sustainability.
             </p>
-            <button className="px-8 py-4 bg-eco-green text-white rounded-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-eco-green/20 cursor-pointer">
-              Explore the Journey
-            </button>
+           <button
+  onClick={() => {
+    document.getElementById("challenge")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }}
+  className="px-8 py-4 bg-eco-green text-white rounded-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-eco-green/20 cursor-pointer"
+>
+  Explore the Journey
+</button>
           </motion.div>
           
           <motion.div 
