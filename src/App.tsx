@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Leaf, AppWindow, Database, Code, ShieldCheck, MessageCircle, BarChart3, Trophy, Globe } from 'lucide-react';
+import { useEffect, useRef } from "react";
 
 export default function App() {
   return (
@@ -165,24 +166,37 @@ export default function App() {
           <div className="order-2 md:order-1 relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-12">
-                <div className="aspect-[9/16] bg-eco-sky/20 rounded-3xl border-4 border-white shadow-xl overflow-hidden relative">
-                   <div className="p-8 h-full flex flex-col justify-end bg-gradient-to-t from-eco-green/100 to-transparent">
-                      <p className="text-white font-bold">App Dashboard</p>
-                   </div>
-                </div>
+               <div className=" aspect-[9/16] rounded-3xl border-4 border-white shadow-xl overflow-hidden relative">
+  <img 
+    src="/img/screen.png"
+    alt="App Dashboard"
+  className="w-full h-full object-cover object-top"
+ />
+
+  <div className="absolute inset-0 flex items-end p-6 bg-gradient-to-t from-black/60 to-transparent">
+    <p className="text-white font-bold">App Dashboard</p>
+  </div>
+</div>
                 <div className="aspect-square bg-eco-leaf/20 rounded-3xl border-4 border-white shadow-xl flex items-center justify-center">
-                   <Trophy className="w-12 h-12 text-eco-leaf" />
-                </div>
+        <img 
+  src="/img/imgsss.jpg"
+  alt="recycle"
+className="w-68 h-68 object-cover rounded-lg"          
+/>       
+        </div>
               </div>
               <div className="space-y-4">
                 <div className="aspect-square bg-eco-green/10 rounded-3xl border-4 border-white shadow-xl flex items-center justify-center">
-                   <MessageCircle className="w-12 h-12 text-eco-green" />
-                </div>
+<img 
+  src="/img/connect.png"
+  alt="connect"
+className="w-68 h-68 object-cover rounded-lg"          
+/>                </div>
                 <div className="aspect-[9/16] bg-stone-200 flex items-center justify-center rounded-3xl border-4 border-white shadow-xl overflow-hidden relative">
                    <img 
-                    src="/img/dasboard.png" 
+                    src="/img/screen.png" 
                     alt="Eco App" 
-                    className="w-full h-full object-cover grayscale opacity-50"
+                    className="w-full h-full object-cover object-bottom grayscale opacity-50"
                     referrerPolicy="no-referrer"
                    />
                 </div>
@@ -246,35 +260,83 @@ export default function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Auth Flows", desc: "Clean login and registration.", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=500" },
-              { name: "Habit Selection", desc: "Personalizing the user goals.", img: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&q=80&w=500" },
-              { name: "Smart Dashboard", desc: "Category-based task overview.", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=500" },
-              { name: "Community Chat", desc: "Social interaction and tips.", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500" },
-              { name: "Deep Analytics", desc: "Progress visualization.", img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=500" },
-              { name: "Leaderboard", desc: "Gamified achievement system.", img: "https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&q=80&w=500" },
-              { name: "Task Management", desc: "Randomized task generation.", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=500" },
-              { name: "User Profile", desc: "Tracking personal growth.", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=500" },
-            ].map((screen, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.05 }}
-                className="group relative bg-stone-100 rounded-3xl overflow-hidden aspect-[4/5] border border-stone-200"
-              >
-                <img 
-                  src={screen.img} 
-                  alt={screen.name} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-eco-green/90 via-eco-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-8 flex flex-col justify-end text-white">
-                  <h4 className="font-bold text-xl">{screen.name}</h4>
-                  <p className="text-sm text-stone-200">{screen.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+           {[
+  {
+    name: "Landing Page",
+    desc: "A personalized landing page tailored to user goals and habits.",
+    img: "/img/landing.png",
+    className: "object-top",
+  },
+  {
+    name: "Habit Selection",
+    desc: "Personalizing the user goals.",
+    img: "/img/landing.png",
+    className: "w-full h-auto object-cover object-bottom",
+  },
+  {
+    name: "Smart Dashboard",
+    desc: "Category-based task overview.",
+    img: "/img/dashboard.png",
+    className: "object-bottom",
+  },
+  {
+  name: "Community Chat",
+  desc: "Social interaction and tips.",
+  img: "/img/chat.png",
+      className: "object-top",
+
+},
+  {
+    name: "Deep Analytics",
+    desc: "Progress visualization.",
+    img: "/img/report.png",
+    className: "object-[center_10%]",
+
+  },
+  {
+    name: "Leaderboard",
+    desc: "Gamified achievement system.",
+    img: "/img/leaderboard.png",
+    className: "object-[center_10%]",
+  },
+  {
+    name: "Task Management",
+    desc: "Randomized task generation.",
+    img: "/img/dashboard.png",
+    className: "object-[center_10%]",
+  },
+  {
+    name: "User Profile",
+    desc: "Tracking personal growth.",
+    img: "/img/profile.png",
+    className: "object-[center_10%]",
+  },
+].map((screen, i) => (
+
+  
+  <motion.div
+    key={i}
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ delay: i * 0.05 }}
+    className="group relative bg-black rounded-[2.5rem] overflow-hidden aspect-[9/19] border-[10px] border-stone-800 shadow-2xl"
+  >
+    
+<div className="w-full h-full">
+      <img
+    src={screen.img}
+    alt={screen.name}
+className={`w-full h-full object-cover ${screen.className || 'object-center'}`}
+referrerPolicy="no-referrer"
+  />
+</div>
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end text-white">
+      <h4 className="font-bold text-lg">{screen.name}</h4>
+      <p className="text-xs text-stone-300">{screen.desc}</p>
+    </div>
+  </motion.div>
+))}
           </div>
         </div>
       </section>
